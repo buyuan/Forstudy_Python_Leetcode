@@ -3,21 +3,35 @@
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
-from T154  import Solution as S
+from T106  import Solution as S
 
-import bisect
 
-def displayB(board:list[list[int]]):
-    for lst in board:
-        for lter in lst:
-            print(lter,end=" ")
-        print("\n")
 if __name__ == '__main__':
     s = S()
-    nums =[1,3,5]
-    target = 3
-    board=[["A","B","C","E"],["S","F","E","S"],["A","D","E","E"]]
-    word = "ABCESEEEFS"
-    print(s.findMin(nums))
+    postorder = [9,15,7,20,3]
+    inorder   = [9,3,15,20,7]
+    nums = [1,2,3,4,5,6]
+    #nums[0:] = nums[len(nums)-1:-1:-1]
+    n = len(nums)-1
+    print(nums[::-1])
+    '''
+    l.addAtHead(7)
+    l.addAtHead(2)
+    l.addAtHead(1)
+    l.addAtIndex(3,0)
+    l.deleteAtIndex(2)
+    l.addAtHead(6)
+    l.addAtTail(4)
+    l.get(4)
+    l.addAtHead(4)
+    l.addAtHead(5,0)
+    l.addAtHead(6)
+    '''
+
+
+
+
+
+
 
 
