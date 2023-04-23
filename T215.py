@@ -1,3 +1,4 @@
+import heapq
 class Solution:
     # 用快速排序的思路，从大到小，但是只用着眼于包含第k的数的那部分
     def partition(self,nums:list[int], left:int, right:int):
@@ -30,6 +31,18 @@ class Solution:
             else:
                 #答案在小的那边
                 left = index+1
+
+    def findKthLargest_heap(self, nums: list[int], k: int) -> int:
+        #一个heap的联系
+        #第k个大数字，就是倒数第len-k+1个最小
+        heapq.heapify(nums)
+        count = len(nums)-k
+        while count>0:
+            heapq.heappop(nums)
+            count-=1
+        return heapq.heappop(nums)
+
+
 
 '''
 215. Kth Largest Element in an Array
