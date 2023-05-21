@@ -2,8 +2,9 @@
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import timeit
 
-from T227  import Solution as S
+from T695  import Solution as S
 
 import os
 path = "./"
@@ -23,8 +24,47 @@ class Node:
         self.right = right
         self.next = next
 import heapq
+
+
+class Duck:
+    def __init__(self, color="yellow"):
+        self.color = color
+
+    def quack(self):
+        print(f"Hi, I'm a {self.color} duck!")
 if __name__ == '__main__':
     #totalFileNumber()
+
+
+    '''
+    # a sample of timeit
+    lst1 = [3 for i in range(100000)]
+    lst2 = [3 for i in range(100000)]
+    def que(lst):
+        n=len(lst)
+        while n>0:
+            lst.pop(0)
+            n-=1
+    def stk(lst):
+        n=len(lst)
+        while n>0:
+            lst.pop()
+            n-=1
+
+    res = timeit.timeit(
+        stmt="que(lst1)",
+        setup = "from __main__ import que,lst1",
+        number = 1000)
+
+    print(f'this is the result of que:  {res}')
+    res = timeit.timeit(
+        stmt="stk(lst2)",
+        setup="from __main__ import stk,lst2",
+        number=1000)
+
+    print(f'this is the result of stk: {res}')
+    '''
+
 
 
 
