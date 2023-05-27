@@ -4,7 +4,7 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import timeit
 
-from T695  import Solution as S
+from T17  import Solution as S
 
 import os
 path = "./"
@@ -17,24 +17,11 @@ def totalFileNumber(pth=path):
         if file.endswith('.py'):
             count+=1
     print(count)
-class Node:
-    def __init__(self, val: int = 0, left= None, right= None, next = None):
-        self.val = val
-        self.left = left
-        self.right = right
-        self.next = next
-import heapq
 
-
-class Duck:
-    def __init__(self, color="yellow"):
-        self.color = color
-
-    def quack(self):
-        print(f"Hi, I'm a {self.color} duck!")
 if __name__ == '__main__':
     #totalFileNumber()
-
+    s = S()
+    s.test()
 
     '''
     # a sample of timeit
