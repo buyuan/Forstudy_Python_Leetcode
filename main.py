@@ -20,8 +20,18 @@ def totalFileNumber(pth=path):
 
 if __name__ == '__main__':
     #totalFileNumber()
-    s = S()
-    s.test()
+    a = 502
+    b = 113822
+    res =[str(a),str(b)]
+    n=40
+    while n>12:
+        n-=1
+        t=a
+        a=b
+        b=t+b
+        res.append(str(b))
+    print(",".join(res))
+        
 
     '''
     # a sample of timeit
