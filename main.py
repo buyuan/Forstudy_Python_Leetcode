@@ -2,6 +2,7 @@
 
 # Press ⌃R to execute it or replace it with your code.
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import heapq
 import timeit
 
 from T17  import Solution as S
@@ -20,17 +21,24 @@ def totalFileNumber(pth=path):
 
 if __name__ == '__main__':
     #totalFileNumber()
-    a = 502
-    b = 113822
-    res =[str(a),str(b)]
-    n=40
-    while n>12:
-        n-=1
-        t=a
-        a=b
-        b=t+b
-        res.append(str(b))
-    print(",".join(res))
+    def next_greater_element(nums):
+        n = len(nums)
+        result = [-1] * n
+        stack = []  # 用于存储索引
+
+        for i in range(n):
+            while stack and nums[i] > nums[stack[-1]]:
+                index = stack.pop()
+                result[index] = nums[i]
+            stack.append(i)
+
+        return result
+    nums = [2, 5, 9, 3, 1, 12, 6, 8, 7]
+    result = next_greater_element(nums)
+    print(result)
+
+
+
         
 
     '''
