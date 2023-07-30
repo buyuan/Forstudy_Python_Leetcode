@@ -1,22 +1,24 @@
-import copy
-class Solution(object):
-    def combinationSum(self, candidates: list[int], target: int) -> list[list[int]]:
-        st = set()
-        for i in candidates:
-            if i<=target:
-                st.add(i)
-        lst = list(st)
-        res = []
-        temp= []
-        self.getCom(res,temp,lst,target,0)
-        return res
+from collections import deque
 
-    def getCom(self,res,temp,lst target,startpoint):
-        if target<0:return
-        if target==0:
-            res.add(copy.deepcopy(temp))
-            return
-        for i in range(startpoint,len(lst)):
-            temp.append(lst[i])
-            self.getCom(res,temp,lst,target-lst[i],i)
-            temp.pop()
+
+class Solution:
+    def removeKdigits(self, num: str, k: int) -> str:
+        if k>=len(num):return '0'
+        #monotonic inscresing stack, remove k times when new number is smaller
+        #means remove the left big number
+        stk=deque()
+        for dgt in num:
+            while stk and int(dgt)<int(stk[-1]) and k>0:
+                stk.pop()
+                k-=1
+            stk.append(dgt)
+        #删除开头的0
+        while stk and stk[0]=='0':
+            stk.popleft()
+        #if more k left, delete from right, cannot delete from left, or a larger num will be move to left
+        while stk and k>0:
+            stk.pop()
+            k-=1
+        return "".join(stk) if stk else "0"
+
+

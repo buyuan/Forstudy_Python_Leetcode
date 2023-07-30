@@ -20,22 +20,7 @@ def totalFileNumber(pth=path):
     print(count)
 
 if __name__ == '__main__':
-    #totalFileNumber()
-    def next_greater_element(nums):
-        n = len(nums)
-        result = [-1] * n
-        stack = []  # 用于存储索引
-
-        for i in range(n):
-            while stack and nums[i] > nums[stack[-1]]:
-                index = stack.pop()
-                result[index] = nums[i]
-            stack.append(i)
-
-        return result
-    nums = [2, 5, 9, 3, 1, 12, 6, 8, 7]
-    result = next_greater_element(nums)
-    print(result)
+    totalFileNumber()
 
 
 
