@@ -5,8 +5,7 @@
 import heapq
 import timeit
 
-from T17  import Solution as S
-
+from T909 import Solution as s
 import os
 path = "./"
 def totalFileNumber(pth=path):
@@ -20,7 +19,15 @@ def totalFileNumber(pth=path):
     print(count)
 
 if __name__ == '__main__':
-    totalFileNumber()
+   # totalFileNumber()
+    S = s()
+
+    assert S.getPosition(6,9)  ==(4,3)
+    assert S.getPosition(6,15) ==(3,2)
+    assert S.getPosition(6,21) ==(2,3)
+    assert S.getPosition(6,29) ==(1,4)
+    print(S.getPosition(2,2))
+    assert S.getPosition(2,2) ==(1,1)
 
 
 
