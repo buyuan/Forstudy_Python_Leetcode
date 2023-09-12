@@ -19,15 +19,7 @@ def totalFileNumber(pth=path):
     print(count)
 
 if __name__ == '__main__':
-   # totalFileNumber()
-    S = s()
-
-    assert S.getPosition(6,9)  ==(4,3)
-    assert S.getPosition(6,15) ==(3,2)
-    assert S.getPosition(6,21) ==(2,3)
-    assert S.getPosition(6,29) ==(1,4)
-    print(S.getPosition(2,2))
-    assert S.getPosition(2,2) ==(1,1)
+    totalFileNumber()
 
 
 
